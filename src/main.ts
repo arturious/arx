@@ -17,7 +17,20 @@ if (app) {
       </nav>
 
       <a
-        class="github-followers"
+        class="status-badge wakatime-badge"
+        href="https://wakatime.com/@018ea8ef-ec19-40f1-b747-cf0c760dadab"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="View WakaTime profile"
+      >
+        <img
+          src="https://wakatime.com/badge/user/018ea8ef-ec19-40f1-b747-cf0c760dadab.svg"
+          alt="wakatime"
+        />
+      </a>
+
+      <a
+        class="status-badge github-followers"
         href="https://github.com/arturious?tab=followers"
         target="_blank"
         rel="noreferrer"
