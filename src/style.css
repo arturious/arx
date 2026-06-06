@@ -1,4 +1,6 @@
 :root {
+  --header-height: 80px;
+
   color: #ffffff;
   background: #000000;
   font-family:
@@ -25,9 +27,14 @@ body,
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   background: #000000;
+  overflow-x: hidden;
 }
 
 a {
@@ -36,7 +43,11 @@ a {
 }
 
 .site-header {
-  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: var(--header-height);
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
@@ -82,7 +93,10 @@ a {
   min-width: 0;
   gap: clamp(0.75rem, 2.6vw, 1.5rem);
   color: rgba(255, 255, 255, 0.72);
-  font-size: 0.95rem;
+  font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
 }
 
 .nav-links a {
@@ -96,7 +110,7 @@ a {
 .header-actions {
   justify-self: end;
   gap: 1rem;
-  height: 80px;
+  height: var(--header-height);
   min-width: 0;
 }
 
@@ -148,9 +162,36 @@ a {
 
 .site-main {
   width: 100vw;
-  min-height: calc(100vh - 80px);
-  padding: 1rem clamp(1rem, 5vw, 5rem);
   background: #000000;
+}
+
+.page-section {
+  width: 100vw;
+  min-height: 100vh;
+  scroll-margin-top: var(--header-height);
+}
+
+.hero-section {
+  padding: calc(var(--header-height) + 1rem) clamp(1rem, 5vw, 5rem) 1rem;
+}
+
+.projects-section {
+  display: flex;
+  align-items: flex-start;
+  padding: calc(var(--header-height) + 1rem) clamp(1rem, 5vw, 5rem) 1rem;
+}
+
+.projects-content {
+  width: 100%;
+}
+
+.projects-content h1 {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
 }
 
 .milkshake-cat {
@@ -182,9 +223,12 @@ a {
 }
 
 @media (max-width: 560px) {
+  :root {
+    --header-height: 70px;
+  }
+
   .site-header {
     grid-template-columns: auto 1fr 70px;
-    height: 70px;
     gap: 0.75rem;
     padding-left: 1rem;
   }
@@ -200,7 +244,7 @@ a {
   }
 
   .header-actions {
-    height: 70px;
+    height: var(--header-height);
   }
 
   .status-badge {
@@ -213,8 +257,9 @@ a {
     height: 70px;
   }
 
-  .site-main {
-    min-height: calc(100vh - 70px);
+  .hero-section,
+  .projects-section {
     padding: 1rem;
+    padding-top: calc(var(--header-height) + 1rem);
   }
 }

@@ -52,9 +52,9 @@ if (app) {
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#stack">Stack</a>
-        <a href="#contact">Contact</a>
+        <a href="#projects">projects</a>
+        <a href="#blog">blog</a>
+        <a href="#contact">contact me</a>
       </nav>
 
       <div class="header-actions" aria-label="Profile links">
@@ -129,7 +129,15 @@ if (app) {
       </div>
     </header>
     <main class="site-main">
-      <pre class="milkshake-cat" aria-label="Animated milkshake cat"></pre>
+      <section id="top" class="page-section hero-section" aria-label="Home">
+        <pre class="milkshake-cat" aria-label="Animated milkshake cat"></pre>
+      </section>
+
+      <section id="projects" class="page-section projects-section" aria-labelledby="projects-title">
+        <div class="projects-content">
+          <h1 id="projects-title">projects</h1>
+        </div>
+      </section>
     </main>
   `;
 
