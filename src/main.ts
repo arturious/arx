@@ -1,5 +1,43 @@
 import "./style.css";
 
+const CAT_FRAMES = [
+  [
+    "　　 ∧,,,∧",
+    "　 （ ・ω・） I like milkshake!",
+    "　　( つ旦O",
+    "　　と＿)_)",
+    "　　　　　",
+  ],
+  [
+    "　　 ∧,,,∧",
+    "　 （ ・◎・） slrrrp",
+    "　　(　ﾞノ ヾ",
+    "　　と＿)_)",
+    "　　　　　",
+  ],
+  [
+    "　　 ∧,,,∧",
+    "　 （ ・ω・） Hmm, tastes like prion disease...",
+    "　　( つ旦O",
+    "　　と＿)_)",
+    "　　　　　",
+  ],
+  [
+    "　　 ∧,,,∧",
+    "　 （ ・ω・）",
+    "　　( つ　O. __",
+    "　　と＿)_) （__(）､;.o：。",
+    "　　　　　　　　　　ﾟ*･:.｡",
+  ],
+  [
+    "　　　　　",
+    "　 　　　 _ _　 ξ",
+    "　　　 (´ 　 ｀ヽ、　　 　 __",
+    "　　⊂,_と（　 　 ）⊃　 （__(）､;.o：。",
+    "　　　　　　Ｖ　Ｖ　　　　　　 　 　 ﾟ*･:.｡",
+  ],
+];
+
 const app = document.querySelector<HTMLElement>("#app");
 
 if (app) {
@@ -90,5 +128,21 @@ if (app) {
         </a>
       </div>
     </header>
+    <main class="site-main">
+      <pre class="milkshake-cat" aria-label="Animated milkshake cat"></pre>
+    </main>
   `;
+
+  const milkshakeCat = document.querySelector<HTMLElement>(".milkshake-cat");
+
+  if (milkshakeCat) {
+    const renderCat = () => {
+      const frame = CAT_FRAMES[Math.floor(Date.now() / 930) % CAT_FRAMES.length];
+
+      milkshakeCat.textContent = frame.join("\n");
+    };
+
+    renderCat();
+    window.setInterval(renderCat, 930);
+  }
 }
