@@ -17,6 +17,19 @@ if (app) {
       </nav>
 
       <a
+        class="github-followers"
+        href="https://github.com/arturious?tab=followers"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Follow arturious on GitHub"
+      >
+        <img
+          src="https://img.shields.io/github/followers/arturious?label=Follow&style=social"
+          alt="GitHub followers"
+        />
+      </a>
+
+      <a
         class="github-corner"
         href="https://github.com/arturious/arx"
         target="_blank"
