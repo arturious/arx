@@ -33,7 +33,7 @@ if (app) {
         </div>
 
         <figure class="hero-visual">
-          <img src="/assets/arx-hero.png" alt="Abstract arx monogram artwork" />
+          <img src="./assets/arx-hero.png" alt="Abstract arx monogram artwork" />
         </figure>
       </section>
 
