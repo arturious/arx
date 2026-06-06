@@ -59,9 +59,12 @@ a {
 }
 
 .brand-logo {
+  --brand-logo-color: #B8B8B8;
+
   display: block;
   width: 80px;
   height: 80px;
+  color: var(--brand-logo-color);
   overflow: hidden;
 }
 
