@@ -89,7 +89,7 @@ a {
 }
 
 .nav-links {
-  justify-self: center;
+  justify-self: left;
   min-width: 0;
   gap: clamp(0.75rem, 2.6vw, 1.5rem);
   color: rgba(255, 255, 255, 0.72);
