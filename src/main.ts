@@ -23,7 +23,10 @@ if (app) {
         rel="noreferrer"
         aria-label="Follow arturious on GitHub"
       >
-        <span>Follow</span>
+        <img
+          src="https://img.shields.io/github/followers/arturious?label=Follow&style=social"
+          alt="GitHub followers"
+        />
       </a>
 
       <a
