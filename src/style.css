@@ -51,6 +51,71 @@ img {
   max-width: 100%;
 }
 
+.github-corner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 30;
+  width: 96px;
+  height: 96px;
+  color: #000000;
+  filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.36));
+}
+
+.github-corner svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.github-corner-bg {
+  fill: #ffffff;
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+
+.github-corner-body,
+.github-corner-arm {
+  fill: none;
+  stroke: #000000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 12;
+  transform-origin: 130px 106px;
+}
+
+.github-corner-body {
+  stroke-width: 10;
+}
+
+.github-corner:hover .github-corner-arm,
+.github-corner:focus-visible .github-corner-arm,
+.github-corner.is-waving .github-corner-arm {
+  animation: github-wave 560ms ease-in-out;
+}
+
+.github-corner:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: -8px;
+}
+
+@keyframes github-wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-22deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(12deg);
+  }
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -61,7 +126,7 @@ img {
   gap: 1rem;
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 18px 0;
+  padding: 18px 104px 18px 0;
   backdrop-filter: blur(20px);
 }
 
@@ -343,9 +408,15 @@ h3 {
 }
 
 @media (max-width: 520px) {
+  .github-corner {
+    width: 76px;
+    height: 76px;
+  }
+
   .site-header {
     align-items: flex-start;
     flex-direction: column;
+    padding-right: 84px;
   }
 
   .nav-links {
