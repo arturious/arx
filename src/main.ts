@@ -11,15 +11,15 @@ if (app) {
       rel="noreferrer"
       aria-label="View source on GitHub"
     >
-      <svg width="96" height="96" viewBox="0 0 250 250" aria-hidden="true">
-        <path class="github-corner-bg" d="M0 0h250v250z" />
+      <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0 0l115 115h15l12 27 108 108V0z" />
         <path
-          class="github-corner-arm"
+          class="octo-arm"
           d="M128.3 109c-15.1-9.8-9.3-23.8-9.3-23.8 3.4-7.8 1.6-12.6 1.6-12.6-2.7-6.2 1-9.3 1-9.3 5.7-3.9 11.2 4.7 11.2 4.7 5 8.5 2.7 15.6 2.7 15.6-1.7 7.1 5.4 13.1 10.7 16.5"
         />
         <path
-          class="github-corner-body"
-          d="M115 115.4c-6.8 0-12.8 1.1-17.9 3.1-3.8-7.6-11.8-12.8-11.8-12.8-6.5-4.2-5.6-9.1-5.6-9.1 4.8 1.2 7.4 5.8 7.4 5.8 4.3 7.3 11.2 5.2 14 4 0.4-3.1 1.7-5.2 3-6.4-10.9-1.2-22.4-5.4-22.4-24.2 0-5.3 1.9-9.7 5.1-13.1-0.5-1.2-2.2-6.2 0.5-12.9 0 0 4.1-1.3 13.5 5 3.9-1.1 8.1-1.6 12.3-1.6s8.4 0.6 12.3 1.6c9.4-6.4 13.5-5 13.5-5 2.7 6.7 1 11.7 0.5 12.9 3.2 3.4 5.1 7.8 5.1 13.1 0 18.8-11.5 22.9-22.4 24.1 1.7 1.5 3.3 4.5 3.3 9.1v13.5"
+          class="octo-body"
+          d="M115 115c-0.1 0.1 3.7 1.5 4.8 0.4l13.9-13.8c3.2-2.4 6.2-3.2 8.5-3-8.4-10.6-14.7-24.2 1.6-40.6 4.7-4.6 10.2-6.8 15.9-7 0.6-1.6 3.5-7.4 11.7-10.9 0 0 4.7 2.4 7.4 16.1 4.3 2.4 8.4 5.6 12.1 9.2 3.6 3.6 6.8 7.8 9.2 12.2 13.7 2.6 16.2 7.3 16.2 7.3-3.6 8.2-9.4 11.1-10.9 11.7-0.3 5.8-2.4 11.2-7.1 15.9-16.4 16.4-30 10-40.6 1.6 0.2 2.8-1 6.8-5 10.8l-11.7 11.6c-1.2 1.2 0.6 5.4 0.8 5.3z"
         />
       </svg>
     </a>
@@ -116,16 +116,4 @@ if (app) {
     </main>
   `;
 
-  const githubCorner = app.querySelector<HTMLAnchorElement>(".github-corner");
-
-  githubCorner?.addEventListener("pointerenter", () => {
-    githubCorner.classList.remove("is-waving");
-    window.requestAnimationFrame(() => {
-      githubCorner.classList.add("is-waving");
-    });
-  });
-
-  githubCorner?.addEventListener("animationend", () => {
-    githubCorner.classList.remove("is-waving");
-  });
 }
