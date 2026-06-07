@@ -32,6 +32,17 @@ body,
   margin: 0;
 }
 
+html,
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -96,7 +107,7 @@ a {
 .nav-links {
   justify-self: left;
   min-width: 0;
-  gap: clamp(0.75rem, 2.6vw, 1.5rem);
+  gap: clamp(0.75rem, 2.6vw, 1rem);
   color: rgba(255, 255, 255, 0.72);
   font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
   font-size: 12px;
@@ -105,11 +116,15 @@ a {
 }
 
 .nav-links a {
-  transition: color 160ms ease;
+  padding: 4px 6px;
+  background-color: #24292f;
+  color: #ffffff;
+  border-radius: 4px;
+  transition: background-color 160ms ease;
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  background-color: #30363d;
 }
 
 .header-actions {
@@ -218,7 +233,8 @@ a {
 
 .project-card {
   display: block;
-  width: 33%;
+  flex: 1 1 calc(33% - 15px);
+  max-width: calc(33% - 15px);
   margin-top: 30px;
   padding: 1rem 1.25rem;
   border: 1px solid #222222;
@@ -235,6 +251,13 @@ a {
   transition:
     border-color 160ms ease,
     background-color 160ms ease;
+}
+
+.projects-grid {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .project-heading {
@@ -350,6 +373,8 @@ a {
 
   .project-card {
     padding: 1.25rem;
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 
   .project-heading {
