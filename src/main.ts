@@ -110,7 +110,7 @@ if (app) {
           aria-label="Follow arturious on GitHub"
         >
           <img
-            src="https://img.shields.io/github/followers/arturious?label=Follow&style=social"
+            src="https://img.shields.io/github/followers/arturious?label=Followers&style=social"
             alt="GitHub followers"
           />
         </a>
@@ -191,8 +191,8 @@ if (app) {
                     alt="GitHub kiyomemo repository"
                   /> </a
               ></span>
-              <span class="project-bages"
-                ><a
+              <span class="project-bages">
+                <a
                   class="status-badge github-stars"
                   target="_blank"
                   rel="noreferrer"
@@ -201,8 +201,9 @@ if (app) {
                   <img
                     src="https://img.shields.io/github/stars/arturious/kiyomemo?label=Stars&style=social&logo=github"
                     alt="GitHub repo stars"
-                  /> </a
-              ></span>
+                  />
+                </a>
+              </span>
               <a class="status-badge macos-badge" aria-label="macOS">
                 <img
                   src="https://img.shields.io/badge/macOS-232429?logo=apple&logoColor=F0F0F0"
@@ -257,8 +258,8 @@ if (app) {
                     alt="GitHub vscode-theme-solarized-kuro repository"
                   /> </a
               ></span>
-              <span class="project-bages"
-                ><a
+              <span class="project-bages">
+                <a
                   class="status-badge github-stars"
                   target="_blank"
                   rel="noreferrer"
@@ -267,8 +268,9 @@ if (app) {
                   <img
                     src="https://img.shields.io/github/stars/arturious/vscode-theme-solarized-kuro?label=Stars&style=social&logo=github"
                     alt="GitHub repo stars"
-                  /> </a
-              ></span>
+                  />
+                </a>
+              </span>
               <a class="status-badge vscode-badge" aria-label="Visual Studio Code">
                 <img
                   src="https://custom-icon-badges.demolab.com/badge/vscode-0078d7.svg?logo=visualstudiocode&logoColor=white"
