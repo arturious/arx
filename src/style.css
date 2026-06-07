@@ -188,7 +188,7 @@ a {
 .page-section {
   width: 100vw;
   min-height: 100vh;
-  scroll-margin-top: var(--header-height);
+  scroll-margin-top: 0;
 }
 
 .hero-section {
