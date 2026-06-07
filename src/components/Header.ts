@@ -25,8 +25,8 @@ export const Header = (): string => {
 
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#projects">projects</a>
-        <a href="#blog">blog</a>
-        <a href="#contact">contact me</a>
+        <!-- <a href="#blog">blog</a> -->
+        <!-- <a href="#contact">contact me</a> -->
       </nav>
 
       <div class="header-actions" aria-label="Profile links">
