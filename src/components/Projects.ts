@@ -2,17 +2,7 @@ export const Projects = (): string => {
   return `
     <section id="projects" class="page-section projects-section" aria-labelledby="projects-title">
       <div class="projects-content">
-        <div class="projects-header-container">
-          <pre class="projects-cat-sign" aria-hidden="true">
-__________________________________
-/\\                                 \\
-\\_|                                |
-  |            <span class="sign-text">PROJECTS</span>            |
-  |                                |
-  |   _____________________________|_
-   \\_/_______________________________/</pre>
-          <h1 id="projects-title" class="visually-hidden">projects</h1>
-        </div>
+        <div class="projects-header-container"></div>
         <div class="projects-grid">
           <div
             class="project-card"

@@ -210,13 +210,23 @@ a {
   max-width: 100%;
 }
 
-.projects-content h1 {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.72);
-  font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1;
+.section-title {
+  margin: 0 0 1.5rem;
+  color: #ffffff;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-title::before {
+  content: '>';
+  color: #d4ff00;
+  font-weight: 800;
 }
 
 .project-bages {
@@ -501,27 +511,6 @@ a {
 .contrib-tooltip.visible {
   opacity: 1;
   transform: scale(1);
-}
-
-/* Projects ASCII Cat Sign */
-.projects-cat-sign {
-  margin: 0 0 0.5rem;
-  color: #a3a3a3;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: 14px;
-  line-height: 1.35;
-  white-space: pre;
-  user-select: none;
-}
-
-.projects-cat-sign .sign-border {
-  color: #444444;
-}
-
-.projects-cat-sign .sign-text {
-  color: #2f81f7;
-  font-weight: 700;
-  text-shadow: 0 0 4px rgba(47, 129, 247, 0.3);
 }
 
 /* Hero section layout - center Milkshake Cat */
