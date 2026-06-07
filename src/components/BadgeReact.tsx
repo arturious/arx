@@ -54,7 +54,7 @@ export function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const [dragged, drag] = useState<THREE.Vector3 | false>(false)
   const [hovered, hover] = useState(false)
 
-  const { nodes, materials } = useGLTF('/assets/3d/card.glb') as any
+  const { nodes, materials } = useGLTF('./assets/3d/card.glb') as any
 
   const [curve] = useState(
     () =>
@@ -207,7 +207,7 @@ export function Band({ maxSpeed = 50, minSpeed = 10 }) {
   )
 }
 
-useGLTF.preload('/assets/3d/card.glb')
+useGLTF.preload('./assets/3d/card.glb')
 
 export default function BadgeReact() {
   return (
