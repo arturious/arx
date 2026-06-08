@@ -2,7 +2,11 @@ export const Projects = (): string => {
   return `
     <section id="projects" class="page-section projects-section" aria-labelledby="projects-title">
       <div class="projects-content">
-        <div class="projects-header-container"></div>
+        <div class="github-calendar-container">
+          <div class="github-calendar-graph-wrapper">
+            <div class="github-calendar-graph"></div>
+          </div>
+        </div>
         <div class="projects-grid">
           <div
             class="project-card"
