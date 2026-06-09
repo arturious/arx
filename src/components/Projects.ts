@@ -1,5 +1,5 @@
 export const Projects = (): string => {
-  return `
+  return /*html*/ `
     <section id="projects" class="page-section projects-section" aria-labelledby="projects-title">
       <div class="projects-content">
         <div class="github-calendar-container">

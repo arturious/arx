@@ -11,7 +11,7 @@ import BadgeReact from './components/BadgeReact'
 const app = document.querySelector<HTMLElement>('#app')
 
 if (app) {
-  app.innerHTML = `
+  app.innerHTML = /*html*/ `
     ${Header()}
     <div class="badge-3d-wrapper" id="badge-3d-container"></div>
     <main class="site-main">
