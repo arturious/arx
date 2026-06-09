@@ -51,7 +51,7 @@ export const Header = (): string => {
           aria-label="Open Telegram"
         >
           <img
-            src="https://img.shields.io/badge/t.me-%2324292F?style=flat&logo=telegram&link=https%3A%2F%2Ft.me%2Ffeelinggodblessed"
+            src="https://badgen.net/badge/contact/t.me/24292F?icon=telegram&label=&labelColor=24292F"
             alt="Telegram"
           />
         </a>
@@ -64,20 +64,8 @@ export const Header = (): string => {
           aria-label="Open @arxfuck on X"
         >
           <img
-            src="https://img.shields.io/badge/x-%2324292F?style=flat&logo=x&link=https%3A%2F%2Fx.com%2Farxfuck"
+            src="https://badgen.net/badge/social/x/24292F?icon=x&label=&labelColor=24292F"
             alt="X"
-          />
-        </a>
-
-        <a
-          class="status-badge github-followers"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Follow arturious on GitHub"
-        >
-          <img
-            src="https://img.shields.io/github/followers/arturious?label=Followers&style=social"
-            alt="GitHub followers"
           />
         </a>
 

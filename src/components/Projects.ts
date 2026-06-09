@@ -49,7 +49,7 @@ export const Projects = (): string => {
                   aria-label="View vscode-theme-solarized-kuro repository on GitHub"
                 >
                   <img
-                    src="https://img.shields.io/badge/repo-vscode‐theme‐solarized‐kuro-blue?logo=github&labelColor=232429"
+                    src="https://badgen.net/badge/repo/vscode‐theme‐solarized‐kuro/blue?icon=github&labelColor=232429"
                     alt="GitHub vscode-theme-solarized-kuro repository"
                   />
                 </a>
@@ -62,14 +62,14 @@ export const Projects = (): string => {
                   aria-label="Star vscode-theme-solarized-kuro on GitHub"
                 >
                   <img
-                    src="https://img.shields.io/github/stars/arturious/vscode-theme-solarized-kuro?label=Stars&style=social&logo=github"
+                    src="https://badgen.net/github/stars/arturious/vscode-theme-solarized-kuro?icon=github&label=Stars"
                     alt="GitHub repo stars"
                   />
                 </a>
               </span>
               <a class="status-badge vscode-badge" aria-label="Visual Studio Code">
                 <img
-                  src="https://custom-icon-badges.demolab.com/badge/vscode-0078d7.svg?logo=visualstudiocode&logoColor=white"
+                  src="https://badgen.net/badge/code/vscode/0078d7?icon=https%3A%2F%2Fapi.iconify.design%2Fsimple-icons%3Avisualstudiocode.svg%3Fcolor%3Dwhite&label=&labelColor=0078d7"
                   alt="Visual Studio Code"
                 />
               </a>
@@ -117,7 +117,7 @@ export const Projects = (): string => {
                   aria-label="View kiyomemo repository on GitHub"
                 >
                   <img
-                    src="https://img.shields.io/badge/repo-kiyomemo-blue?logo=github&labelColor=232429"
+                    src="https://badgen.net/badge/repo/kiyomemo/blue?icon=github&labelColor=232429"
                     alt="GitHub kiyomemo repository"
                   />
                 </a>
@@ -130,14 +130,14 @@ export const Projects = (): string => {
                   aria-label="Star kiyomemo on GitHub"
                 >
                   <img
-                    src="https://img.shields.io/github/stars/arturious/kiyomemo?label=Stars&style=social&logo=github"
+                    src="https://badgen.net/github/stars/arturious/kiyomemo?icon=github&label=Stars"
                     alt="GitHub repo stars"
                   />
                 </a>
               </span>
               <a class="status-badge macos-badge" aria-label="macOS">
                 <img
-                  src="https://img.shields.io/badge/macOS-232429?logo=apple&logoColor=F0F0F0"
+                  src="https://badgen.net/badge/os/macOS/232429?icon=apple&iconColor=F0F0F0&label=&labelColor=232429"
                   alt="macOS"
                 />
               </a>
@@ -182,7 +182,7 @@ export const Projects = (): string => {
                   aria-label="View ctrlspace repository on GitHub"
                 >
                   <img
-                    src="https://img.shields.io/badge/repo-ctrlspace-blue?logo=github&labelColor=232429"
+                    src="https://badgen.net/badge/repo/ctrlspace/blue?icon=github&labelColor=232429"
                     alt="GitHub ctrlspace repository"
                   />
                 </a>
@@ -195,14 +195,14 @@ export const Projects = (): string => {
                   aria-label="Star ctrlspace on GitHub"
                 >
                   <img
-                    src="https://img.shields.io/github/stars/arturious/ctrlspace?label=Stars&style=social&logo=github"
+                    src="https://badgen.net/github/stars/arturious/ctrlspace?icon=github&label=Stars"
                     alt="GitHub repo stars"
                   />
                 </a>
               </span>
               <a class="status-badge macos-badge" aria-label="macOS">
                 <img
-                  src="https://img.shields.io/badge/macOS-232429?logo=apple&logoColor=F0F0F0"
+                  src="https://badgen.net/badge/os/macOS/232429?icon=apple&iconColor=F0F0F0&label=&labelColor=232429"
                   alt="macOS"
                 />
               </a>
