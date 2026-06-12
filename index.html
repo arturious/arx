@@ -10,6 +10,61 @@
     <title>arx</title>
   </head>
   <body>
+    <!-- Debug error console overlay -->
+    <div
+      id="debug-error-overlay"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 0, 0, 0.9);
+        color: white;
+        z-index: 99999;
+        font-family: monospace;
+        padding: 10px;
+        display: none;
+        max-height: 30vh;
+        overflow-y: auto;
+        font-size: 12px;
+      "
+    >
+      <strong>Browser Errors:</strong>
+      <button
+        onclick="document.getElementById('debug-error-overlay').style.display = 'none'"
+        style="float: right; background: white; color: red; border: none; cursor: pointer"
+      >
+        Close
+      </button>
+      <div id="debug-error-list"></div>
+    </div>
+    <script>
+      ;(function () {
+        const overlay = document.getElementById('debug-error-overlay')
+        const list = document.getElementById('debug-error-list')
+        function showError(msg) {
+          overlay.style.display = 'block'
+          const div = document.createElement('div')
+          div.style.borderTop = '1px solid white'
+          div.style.padding = '4px 0'
+          div.textContent = msg
+          list.appendChild(div)
+        }
+        window.addEventListener('error', function (e) {
+          showError(e.message + ' at ' + e.filename + ':' + e.lineno)
+        })
+        window.addEventListener('unhandledrejection', function (e) {
+          showError('Unhandled promise rejection: ' + e.reason)
+        })
+        const originalError = console.error
+        console.error = function (...args) {
+          showError(
+            args.map(a => (typeof a === 'object' ? JSON.stringify(a) : String(a))).join(' ')
+          )
+          originalError.apply(console, args)
+        }
+      })()
+    </script>
     <main id="app"></main>
     <script type="module" src="/src/main.ts"></script>
   </body>
