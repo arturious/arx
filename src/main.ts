@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client'
 import { CAT_FRAMES } from './catFrames'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
-import { Projects } from './components/Projects'
+// import { Projects } from './components/Projects'
 import { fetchContributions } from './services/github'
 import BadgeReact from './components/BadgeReact'
 import Dither from './components/Dither'
@@ -17,7 +17,7 @@ if (app) {
     <div class="badge-3d-wrapper" id="badge-3d-container"></div>
     <main class="site-main">
       ${Hero()}
-      ${Projects()}
+      <!-- \${Projects()} -->
     </main>
   `
 

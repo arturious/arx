@@ -24,7 +24,7 @@ export const Header = (): string => {
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#projects">projects</a>
+        <!-- <a href="#projects">projects</a> -->
         <!-- <a href="#blog">blog</a> -->
         <!-- <a href="#contact">contact me</a> -->
       </nav>
