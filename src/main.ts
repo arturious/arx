@@ -8,6 +8,7 @@ import { Hero } from './components/Hero'
 import { fetchContributions } from './services/github'
 import BadgeReact from './components/BadgeReact'
 import Dither from './components/Dither'
+import DecryptedText from './components/DecryptedText'
 
 const app = document.querySelector<HTMLElement>('#app')
 
@@ -66,6 +67,31 @@ if (app) {
       )
     } catch (err) {
       console.error('Failed to load React Dither Background:', err)
+    }
+  }
+
+  // Initialize React DecryptedText
+  const decryptedTextContainer = document.getElementById('decrypted-text-container')
+  if (decryptedTextContainer) {
+    try {
+      const root = createRoot(decryptedTextContainer)
+      root.render(
+        React.createElement(DecryptedText, {
+          text: 'hello world!',
+          animateOn: 'both',
+          revealDirection: 'start',
+          sequential: true,
+          useOriginalCharsOnly: false,
+          speed: 70,
+          className:
+            'font-mono text-[16px] text-[#888888] bg-black rounded-md uppercase tracking-[0.08em]',
+          encryptedClassName:
+            'font-mono text-[16px] text-[#888888] bg-black rounded-md uppercase tracking-[0.08em]',
+          parentClassName: 'inline-block select-none',
+        })
+      )
+    } catch (err) {
+      console.error('Failed to load DecryptedText:', err)
     }
   }
 }

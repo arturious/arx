@@ -2,7 +2,7 @@ export const Hero = (): string => {
   return `
     <section id="top" class="page-section hero-section" aria-label="Home">
       <div class="dither-bg-wrapper" id="dither-bg-container"></div>
-      <!-- <pre class="milkshake-cat" aria-label="Animated milkshake cat"></pre> -->
+      <div id="decrypted-text-container"></div>
       <pre class="welcome-sign" aria-label="Welcome ASCII art">
 ⢴⣶⣶⣿⣶⣶⣶⣶⣶⡶⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⠍⡄⢀⠄⣰⠀⣄⢠⣄⠀⠀⣠⣀⡀⠄⠠⡀⠀⣄⡀⠀⠀⠀⠸⡀⠀
 ⣽⣿⣿⣿⣿⣿⣿⡟⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⠰⠀⡞⠀⡅⠀⠛⣿⣿⡆⠀⡿⠛⡇⢰⠀⣿⠀⠉⠱⡄⠰⠀⠀⠇⠀

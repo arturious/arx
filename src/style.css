@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-mono: 'Geist Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
 :root {
   --header-height: 80px;
 
@@ -197,10 +204,11 @@ a {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  padding: calc(var(--header-height) + 1.5rem) clamp(1rem, 5vw, 5rem) 1.5rem;
+  padding: 0 clamp(1rem, 5vw, 5rem);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   min-height: 100vh;
 }
 
@@ -342,10 +350,10 @@ a {
   width: max-content;
   max-width: 100%;
   margin: 0;
-  color: #d4ff00;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: 14px;
-  line-height: 1.35;
+  color: #888888;
+  font-family: 'Geist Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 11px;
+  line-height: 1.25;
   white-space: pre;
   user-select: none;
   pointer-events: none;
