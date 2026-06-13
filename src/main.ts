@@ -148,10 +148,10 @@ if (app) {
         setTimeout(() => {
           btn.classList.add('shimmer-active')
 
-          // Remove class after 1.5s so it transitions back smoothly
+          // Remove class after 800ms (enough for the 550ms shimmer to finish)
           setTimeout(() => {
             btn.classList.remove('shimmer-active')
-          }, 1500)
+          }, 800)
         }, index * 200)
       })
     }

@@ -172,8 +172,7 @@ a {
   user-select: none;
 }
 
-.btn-4:hover,
-.btn-4.shimmer-active {
+.btn-4:hover {
   border-color: rgba(255, 255, 255, 0.45);
 }
 
@@ -207,14 +206,12 @@ a {
   transform: translate(-50%, -50%) translateY(20px);
 }
 
-.btn-4:hover .text-x,
-.btn-4.shimmer-active .text-x {
+.btn-4:hover .text-x {
   opacity: 0;
   transform: translate(-50%, -50%) translateY(-20px);
 }
 
-.btn-4:hover .text-username,
-.btn-4.shimmer-active .text-username {
+.btn-4:hover .text-username {
   opacity: 1;
   transform: translate(-50%, -50%) translateY(-1px);
 }
@@ -261,8 +258,7 @@ a {
   transition: opacity 0.25s ease;
 }
 
-.wakatime-btn:hover svg,
-.wakatime-btn.shimmer-active svg {
+.wakatime-btn:hover svg {
   opacity: 1;
 }
 
@@ -276,8 +272,7 @@ a {
   transition: color 0.25s ease;
 }
 
-.wakatime-btn:hover .wakatime-hours,
-.wakatime-btn.shimmer-active .wakatime-hours {
+.wakatime-btn:hover .wakatime-hours {
   color: #ffffff;
 }
 
