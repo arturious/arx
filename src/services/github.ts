@@ -89,6 +89,6 @@ export const fetchContributions = async (username: string) => {
     const data: ContributionsData = await response.json()
     renderContributions(data)
   } catch (error) {
-    console.error('Error loading contributions:', error)
+    console.warn('Error loading contributions:', error)
   }
 }
