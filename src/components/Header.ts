@@ -24,7 +24,7 @@ export const Header = (): string => {
       </a>
 
       <nav class="nav-links" aria-label="Primary navigation">
-        <pre class="milkshake-cat" aria-label="Animated milkshake cat"></pre>
+        <!-- <pre class="milkshake-cat" aria-label="Animated milkshake cat"></pre> -->
         <!-- <a href="#projects">projects</a> -->
         <!-- <a href="#blog">blog</a> -->
         <!-- <a href="#contact">contact me</a> -->
@@ -32,42 +32,49 @@ export const Header = (): string => {
 
       <div class="header-actions" aria-label="Profile links">
         <a
-          class="status-badge wakatime-badge"
+          class="btn btn-4 wakatime-btn"
           href="https://wakatime.com/@018ea8ef-ec19-40f1-b747-cf0c760dadab"
           target="_blank"
           rel="noreferrer"
           aria-label="View WakaTime profile"
         >
-          <img
-            src="https://wakatime.com/badge/user/018ea8ef-ec19-40f1-b747-cf0c760dadab.svg"
-            alt="wakatime"
-          />
+          <svg viewBox="0 0 340 340" width="16" height="16" fill="currentColor" style="display: block;">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M170 20C87.156 20 20 87.156 20 170C20 252.844 87.156 320 170 320C252.844 320 320 252.844 320 170C320 87.156 252.844 20 170 20V20V20Z" stroke="currentColor" stroke-width="40" fill="none"/>
+            <path d="M190.183 213.541C188.74 215.443 186.576 216.667 184.151 216.667C183.913 216.667 183.677 216.651 183.443 216.627C183.042 216.579 182.823 216.545 182.606 216.497C182.337 216.434 182.137 216.375 181.94 216.308C181.561 216.176 181.392 216.109 181.228 216.035C180.843 215.849 180.707 215.778 180.572 215.701C180.205 215.478 180.109 215.412 180.014 215.345C179.856 215.233 179.698 215.117 179.547 214.992C179.251 214.746 179.147 214.65 179.044 214.552C178.731 214.241 178.531 214.018 178.341 213.785C177.982 213.331 177.69 212.888 177.438 212.415L168.6 198.214L159.766 212.415C158.38 214.939 155.874 216.667 152.995 216.667C150.106 216.667 147.588 214.926 146.243 212.346L107.607 156.061C106.337 154.529 105.556 152.499 105.556 150.258C105.556 145.514 109.043 141.665 113.344 141.665C116.127 141.665 118.564 143.282 119.942 145.708L152.555 193.9L161.735 178.952C163.058 176.288 165.626 174.478 168.575 174.478C171.273 174.478 173.652 175.996 175.049 178.298L184.517 193.839L235.684 120.583C237.075 118.226 239.475 116.667 242.213 116.667C246.514 116.667 250 120.514 250 125.258C250 127.332 249.337 129.232 248.23 130.715L190.183 213.541V213.541Z" fill="currentColor"/>
+          </svg>
+          <span class="wakatime-text">wakatime <span class="wakatime-sep">|</span> <span class="wakatime-hours">loading...</span></span>
         </a>
 
         <a
-          class="status-badge telegram-badge"
+          class="btn btn-4 telegram-btn"
           href="https://t.me/feelinggodblessed"
           target="_blank"
           rel="noreferrer"
           aria-label="Open Telegram"
         >
-          <img
-            src="https://badgen.net/badge/contact/t.me/24292F?icon=telegram&label=&labelColor=24292F"
-            alt="Telegram"
-          />
+          <span class="text-x">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display: block;">
+              <path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 1.589 4.878c.19.524.097.736.65.736.43 0 .625-.196.865-.43l2.077-2.022 4.33 3.197c.797.439 1.37.213 1.57-.736l2.837-13.364c.29-1.16-.442-1.687-1.202-1.342z" />
+            </svg>
+            telegram
+          </span>
+          <span class="text-username">t.me/feelinggodblessed</span>
         </a>
 
         <a
-          class="status-badge x-badge"
+          class="btn btn-4 x-btn"
           href="https://x.com/arxfuck"
           target="_blank"
           rel="noreferrer"
           aria-label="Open @arxfuck on X"
         >
-          <img
-            src="https://badgen.net/badge/social/x/24292F?icon=x&label=&labelColor=24292F"
-            alt="X"
-          />
+          <span class="text-x">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display: block;">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            x
+          </span>
+          <span class="text-username">x.com/arxfuck</span>
         </a>
 
         <a

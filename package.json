@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "tsc && vite build",
+    "build": "node scripts/fetch-wakatime.js && tsc && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "format": "prettier --write \"src/**/*.{ts,css,html,json,md,js,tsx,jsx}\"",
     "prepare": "husky install"

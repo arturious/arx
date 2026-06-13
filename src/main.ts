@@ -36,6 +36,34 @@ if (app) {
   // Load GitHub contributions for username 'arturious'
   fetchContributions('arturious')
 
+  // WakaTime stats loader
+  const wakatimeHours = document.querySelector<HTMLElement>('.wakatime-hours')
+  if (wakatimeHours) {
+    // 1. Load build-time fallback immediately
+    import('./wakatime-fallback.json').then(fallback => {
+      wakatimeHours.textContent = fallback.hours
+    })
+
+    // 2. Try fetching live stats via allorigins CORS proxy
+    const wakatimeUrl = 'https://wakatime.com/badge/user/018ea8ef-ec19-40f1-b747-cf0c760dadab.svg'
+    fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(wakatimeUrl)}`)
+      .then(res => {
+        if (!res.ok) throw new Error()
+        return res.json()
+      })
+      .then(data => {
+        const svg = data.contents
+        const matches = [...svg.matchAll(/<text[^>]*>([^<]+)<\/text>/g)]
+        if (matches.length > 0) {
+          const hours = matches[matches.length - 1][1].trim()
+          wakatimeHours.textContent = hours
+        }
+      })
+      .catch(() => {
+        // Fail silently, fallback is already displayed
+      })
+  }
+
   // Initialize React 3D Badge
   const badgeContainer = document.getElementById('badge-3d-container')
   if (badgeContainer) {
