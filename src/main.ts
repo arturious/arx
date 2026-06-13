@@ -138,4 +138,28 @@ if (app) {
       console.error('Failed to load DecryptedText:', err)
     }
   }
+
+  // Programmatic staggered shimmer/hover trigger for navbar buttons
+  const navbarButtons = document.querySelectorAll<HTMLElement>('.btn-4')
+  if (navbarButtons.length > 0) {
+    const triggerNavbarShimmer = () => {
+      navbarButtons.forEach((btn, index) => {
+        // Stagger each button by 200ms
+        setTimeout(() => {
+          btn.classList.add('shimmer-active')
+
+          // Remove class after 1.5s so it transitions back smoothly
+          setTimeout(() => {
+            btn.classList.remove('shimmer-active')
+          }, 1500)
+        }, index * 200)
+      })
+    }
+
+    // Trigger once shortly after page load/refresh (1.2s delay)
+    setTimeout(triggerNavbarShimmer, 1200)
+
+    // Trigger every 5 seconds
+    setInterval(triggerNavbarShimmer, 5000)
+  }
 }

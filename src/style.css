@@ -172,7 +172,8 @@ a {
   user-select: none;
 }
 
-.btn-4:hover {
+.btn-4:hover,
+.btn-4.shimmer-active {
   border-color: rgba(255, 255, 255, 0.45);
 }
 
@@ -206,12 +207,14 @@ a {
   transform: translate(-50%, -50%) translateY(20px);
 }
 
-.btn-4:hover .text-x {
+.btn-4:hover .text-x,
+.btn-4.shimmer-active .text-x {
   opacity: 0;
   transform: translate(-50%, -50%) translateY(-20px);
 }
 
-.btn-4:hover .text-username {
+.btn-4:hover .text-username,
+.btn-4.shimmer-active .text-username {
   opacity: 1;
   transform: translate(-50%, -50%) translateY(-1px);
 }
@@ -230,7 +233,8 @@ a {
   z-index: -10;
 }
 
-.btn-4:hover::after {
+.btn-4:hover::after,
+.btn-4.shimmer-active::after {
   left: 120%;
   transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -257,7 +261,8 @@ a {
   transition: opacity 0.25s ease;
 }
 
-.wakatime-btn:hover svg {
+.wakatime-btn:hover svg,
+.wakatime-btn.shimmer-active svg {
   opacity: 1;
 }
 
@@ -271,7 +276,8 @@ a {
   transition: color 0.25s ease;
 }
 
-.wakatime-btn:hover .wakatime-hours {
+.wakatime-btn:hover .wakatime-hours,
+.wakatime-btn.shimmer-active .wakatime-hours {
   color: #ffffff;
 }
 
