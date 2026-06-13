@@ -142,18 +142,28 @@ if (app) {
   // Programmatic staggered shimmer/hover trigger for navbar buttons
   const navbarButtons = document.querySelectorAll<HTMLElement>('.btn-4')
   if (navbarButtons.length > 0) {
+    let isReverse = false
+
     const triggerNavbarShimmer = () => {
+      const activeClass = isReverse ? 'shimmer-active-reverse' : 'shimmer-active'
+      const len = navbarButtons.length
+
       navbarButtons.forEach((btn, index) => {
-        // Stagger each button by 200ms
+        // Stagger left-to-right (0, 1, 2) or right-to-left (2, 1, 0)
+        const staggerIndex = isReverse ? len - 1 - index : index
+
         setTimeout(() => {
-          btn.classList.add('shimmer-active')
+          btn.classList.add(activeClass)
 
           // Remove class after 800ms (enough for the 550ms shimmer to finish)
           setTimeout(() => {
-            btn.classList.remove('shimmer-active')
+            btn.classList.remove(activeClass)
           }, 800)
-        }, index * 200)
+        }, staggerIndex * 200)
       })
+
+      // Alternate the direction for the next cycle
+      isReverse = !isReverse
     }
 
     // Trigger once shortly after page load/refresh (1.2s delay)
