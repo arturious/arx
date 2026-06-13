@@ -44,23 +44,39 @@ if (app) {
       wakatimeHours.textContent = fallback.hours
     })
 
-    // 2. Try fetching live stats via allorigins CORS proxy
+    // 2. Try fetching live stats via CORS proxies (Attempt 1: corsproxy.io, Attempt 2: allorigins.win)
     const wakatimeUrl = 'https://wakatime.com/badge/user/018ea8ef-ec19-40f1-b747-cf0c760dadab.svg'
-    fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(wakatimeUrl)}`)
+
+    const parseSvgAndSetHours = (svg: string): boolean => {
+      const matches = [...svg.matchAll(/<text[^>]*>([^<]+)<\/text>/g)]
+      if (matches.length > 0) {
+        const hours = matches[matches.length - 1][1].trim()
+        wakatimeHours.textContent = hours
+        return true
+      }
+      return false
+    }
+
+    fetch(`https://corsproxy.io/?url=${encodeURIComponent(wakatimeUrl)}`)
       .then(res => {
         if (!res.ok) throw new Error()
-        return res.json()
+        return res.text()
       })
-      .then(data => {
-        const svg = data.contents
-        const matches = [...svg.matchAll(/<text[^>]*>([^<]+)<\/text>/g)]
-        if (matches.length > 0) {
-          const hours = matches[matches.length - 1][1].trim()
-          wakatimeHours.textContent = hours
-        }
+      .then(svg => {
+        if (!parseSvgAndSetHours(svg)) throw new Error()
       })
       .catch(() => {
-        // Fail silently, fallback is already displayed
+        fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(wakatimeUrl)}`)
+          .then(res => {
+            if (!res.ok) throw new Error()
+            return res.json()
+          })
+          .then(data => {
+            parseSvgAndSetHours(data.contents)
+          })
+          .catch(() => {
+            // Fail silently, fallback is already displayed
+          })
       })
   }
 
