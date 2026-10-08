@@ -1,84 +1,34 @@
 import './style.css'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { CAT_FRAMES } from './catFrames'
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-// import { Projects } from './components/Projects'
-import { fetchContributions } from './services/github'
 import BadgeReact from './components/BadgeReact'
-import Dither from './components/Dither'
-import DecryptedText from './components/DecryptedText'
 
 const app = document.querySelector<HTMLElement>('#app')
 
 if (app) {
   app.innerHTML = /*html*/ `
-    ${Header()}
     <div class="badge-3d-wrapper" id="badge-3d-container"></div>
-    <main class="site-main">
-      ${Hero()}
-      <!-- \${Projects()} -->
-    </main>
+    <a
+      class="github-corner"
+      href="https://github.com/arturious"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="View source on GitHub"
+    >
+      <svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0 0l115 115h15l12 27 108 108V0z" />
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          class="octo-arm"
+        ></path>
+        <path
+          class="octo-body"
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+        />
+      </svg>
+    </a>
   `
-
-  // Animated cat logic
-  const milkshakeCat = document.querySelector<HTMLElement>('.milkshake-cat')
-  if (milkshakeCat) {
-    const renderCat = () => {
-      const frame = CAT_FRAMES[Math.floor(Date.now() / 930) % CAT_FRAMES.length]
-      milkshakeCat.textContent = frame.join('\n')
-    }
-    renderCat()
-    window.setInterval(renderCat, 930)
-  }
-
-  // Load GitHub contributions for username 'arturious'
-  fetchContributions('arturious')
-
-  // WakaTime stats loader
-  const wakatimeHours = document.querySelector<HTMLElement>('.wakatime-hours')
-  if (wakatimeHours) {
-    // 1. Load build-time fallback immediately
-    import('./wakatime-fallback.json').then(fallback => {
-      wakatimeHours.textContent = fallback.hours
-    })
-
-    // 2. Try fetching live stats via CORS proxies (Attempt 1: corsproxy.io, Attempt 2: allorigins.win)
-    const wakatimeUrl = 'https://wakatime.com/badge/user/018ea8ef-ec19-40f1-b747-cf0c760dadab.svg'
-
-    const parseSvgAndSetHours = (svg: string): boolean => {
-      const matches = [...svg.matchAll(/<text[^>]*>([^<]+)<\/text>/g)]
-      if (matches.length > 0) {
-        const hours = matches[matches.length - 1][1].trim()
-        wakatimeHours.textContent = hours
-        return true
-      }
-      return false
-    }
-
-    fetch(`https://corsproxy.io/?url=${encodeURIComponent(wakatimeUrl)}`)
-      .then(res => {
-        if (!res.ok) throw new Error()
-        return res.text()
-      })
-      .then(svg => {
-        if (!parseSvgAndSetHours(svg)) throw new Error()
-      })
-      .catch(() => {
-        fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(wakatimeUrl)}`)
-          .then(res => {
-            if (!res.ok) throw new Error()
-            return res.json()
-          })
-          .then(data => {
-            parseSvgAndSetHours(data.contents)
-          })
-          .catch(() => {
-            // Fail silently, fallback is already displayed
-          })
-      })
-  }
 
   // Initialize React 3D Badge
   const badgeContainer = document.getElementById('badge-3d-container')
@@ -89,87 +39,5 @@ if (app) {
     } catch (err) {
       console.error('Failed to load React 3D badge:', err)
     }
-  }
-
-  // Initialize React Dither Background
-  const ditherContainer = document.getElementById('dither-bg-container')
-  if (ditherContainer) {
-    try {
-      const root = createRoot(ditherContainer)
-      root.render(
-        React.createElement(Dither, {
-          waveColor: [0.30980392156862746, 0.30980392156862746, 0.30980392156862746],
-          disableAnimation: false,
-          enableMouseInteraction: false,
-          mouseRadius: 0.3,
-          colorNum: 4,
-          pixelSize: 2,
-          waveAmplitude: 0.3,
-          waveFrequency: 3,
-          waveSpeed: 0.05,
-        })
-      )
-    } catch (err) {
-      console.error('Failed to load React Dither Background:', err)
-    }
-  }
-
-  // Initialize React DecryptedText
-  const decryptedTextContainer = document.getElementById('decrypted-text-container')
-  if (decryptedTextContainer) {
-    try {
-      const root = createRoot(decryptedTextContainer)
-      root.render(
-        React.createElement(DecryptedText, {
-          text: 'hello world!',
-          animateOn: 'both',
-          revealDirection: 'start',
-          sequential: true,
-          useOriginalCharsOnly: false,
-          speed: 70,
-          className:
-            'font-mono text-[16px] text-[#888888] bg-black rounded-md uppercase tracking-[0.08em]',
-          encryptedClassName:
-            'font-mono text-[16px] text-[#888888] bg-black rounded-md uppercase tracking-[0.08em]',
-          parentClassName: 'inline-block select-none',
-        })
-      )
-    } catch (err) {
-      console.error('Failed to load DecryptedText:', err)
-    }
-  }
-
-  // Programmatic staggered shimmer/hover trigger for navbar buttons
-  const navbarButtons = document.querySelectorAll<HTMLElement>('.btn-4')
-  if (navbarButtons.length > 0) {
-    let isReverse = false
-
-    const triggerNavbarShimmer = () => {
-      const activeClass = isReverse ? 'shimmer-active-reverse' : 'shimmer-active'
-      const len = navbarButtons.length
-
-      navbarButtons.forEach((btn, index) => {
-        // Stagger left-to-right (0, 1, 2) or right-to-left (2, 1, 0)
-        const staggerIndex = isReverse ? len - 1 - index : index
-
-        setTimeout(() => {
-          btn.classList.add(activeClass)
-
-          // Remove class after 800ms (enough for the 550ms shimmer to finish)
-          setTimeout(() => {
-            btn.classList.remove(activeClass)
-          }, 800)
-        }, staggerIndex * 200)
-      })
-
-      // Alternate the direction for the next cycle
-      isReverse = !isReverse
-    }
-
-    // Trigger once shortly after page load/refresh (1.2s delay)
-    setTimeout(triggerNavbarShimmer, 1200)
-
-    // Trigger every 5 seconds
-    setInterval(triggerNavbarShimmer, 5000)
   }
 }
