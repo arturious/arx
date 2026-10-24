@@ -2,11 +2,13 @@ import './style.css'
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import BadgeReact from './components/BadgeReact'
+import { OceanEngine } from './vendor/ascii-sharks'
 
 const app = document.querySelector<HTMLElement>('#app')
 
 if (app) {
   app.innerHTML = /*html*/ `
+    <canvas class="ocean-bg" aria-hidden="true"></canvas>
     <div class="badge-3d-wrapper" id="badge-3d-container"></div>
     <a
       class="github-corner"
@@ -29,6 +31,21 @@ if (app) {
       </svg>
     </a>
   `
+
+  // ASCII ocean background (github.com/stackedlol/ascii-sharks)
+  const oceanCanvas = app.querySelector<HTMLCanvasElement>('.ocean-bg')
+  if (oceanCanvas) {
+    try {
+      new OceanEngine(oceanCanvas, [
+        { kind: 'hammerhead', size: 1 },
+        { kind: 'tiger', size: 0.9 },
+        { kind: 'thresher', size: 0.85 },
+        { kind: 'mako', size: 0.8 },
+      ])
+    } catch (err) {
+      console.error('Failed to load ASCII ocean background:', err)
+    }
+  }
 
   // Initialize React 3D Badge
   const badgeContainer = document.getElementById('badge-3d-container')

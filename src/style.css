@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
 @import 'tailwindcss';
 
 :root {
@@ -22,6 +23,17 @@ body,
 body {
   background: #000000;
   overflow: hidden;
+}
+
+/* ASCII ocean background */
+.ocean-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace;
 }
 
 /* 3D Event Badge */

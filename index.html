@@ -51,6 +51,8 @@
           list.appendChild(div)
         }
         window.addEventListener('error', function (e) {
+          // Benign browser notice, not a real error
+          if (/ResizeObserver loop/.test(e.message)) return
           showError(e.message + ' at ' + e.filename + ':' + e.lineno)
         })
         window.addEventListener('unhandledrejection', function (e) {
